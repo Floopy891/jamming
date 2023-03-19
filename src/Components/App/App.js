@@ -1,4 +1,4 @@
-import logo from './background_photo_desktop.jpg';
+
 
 function App() {
   return (
