@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import SearchBar from '../SearchBar/SearchBar.js';
 
 class App extends React.Component {
   
@@ -8,7 +9,7 @@ class App extends React.Component {
     <div>
       <h1>Ja<span className="highlight">mmm</span>ing</h1>
       <div className="App">
-        {/* <SearchBar /> */}
+        <SearchBar />
         <div className="App-playlist">
           {/* <SearchResults /> */}
           {/* <Playlist /> */}
