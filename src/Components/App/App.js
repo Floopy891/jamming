@@ -1,16 +1,15 @@
 import logo from './background_photo_desktop.jpg';
-import './App.css';
 
 function App() {
   return (
-    <div>
-  <h1>Ja<span class="highlight">mmm</span>ing</h1>
-  <div class="App">
+<div>
+  <h1>Ja<span className="highlight">mmm</span>ing</h1>
+  <div className="App">
     <input placeholder='Enter a Song Title'>
+      <a>SEARCH</a>
     </input>
-    <div class="App-playlist">
-      // Add a SearchResults component
-      // Add a Playlist component
+    <div className="App-playlist">
+      <h2>Results</h2>
     </div>
   </div>
 </div>
