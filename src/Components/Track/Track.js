@@ -11,15 +11,13 @@ class Track extends React.Component {
             return <button className="Track-action">+</button>;
         }
     }
-    
+
     render() {
         return (
             <div className="Track">
                 <div className="Track-information">
-                    {/* Track Name Goes in h3 Tag */}
-                    <h3></h3>
-                    {/* Track artist and other details go in p */}
-                    <p></p>
+                    <h3>{this.props.track.name}</h3>
+                    <p>{this.props.track.artist} | {this.props.track.album}</p>
                 </div>
                 <button className="Track-action"></button>
             </div>
