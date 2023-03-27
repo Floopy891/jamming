@@ -1,5 +1,5 @@
 const clientId = '24908bea40ef440a9a10d0f84d1f741c';
-const redirectURI = 'http://localhost:3000/';
+const redirectURI = 'gullible-side.surge.sh';
 
 let accessToken;
 
