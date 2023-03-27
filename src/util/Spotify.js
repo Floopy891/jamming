@@ -4,17 +4,17 @@ const redirectURI = 'http://localhost:3000/';
 let accessToken;
 
 const Spotify = {
-    
+
     getAccessToken() {
-        if(accessToken) {
+        if (accessToken) {
             return accessToken;
         }
 
         //access token check
         const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
         const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
-    
-        if(accessTokenMatch && expiresInMatch) {
+
+        if (accessTokenMatch && expiresInMatch) {
             accessToken = accessTokenMatch[1];
             const expiresIn = expiresInMatch[1];
 
@@ -28,6 +28,27 @@ const Spotify = {
             wondow.location = accessURL;
         }
 
+    },
+
+    search(term) {
+        const accessToken = Spotify.getAccessToken();
+        return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        }).then(response => {
+            return response.json();
+        }).then(jsonResponse => {
+            if (!jsonResponse) {
+                return [];
+            } else {
+                return jsonResponse.tracks.items.map(track => ({
+                    id: track.id,
+                    name: track.name,
+                    artist: track.artists[0].name,
+                    album: track.album.name,
+                    URI: track.uri
+                }));
+            }
+        });
     }
 }
 
